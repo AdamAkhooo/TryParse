@@ -14,13 +14,15 @@ class Program{
         
         
          static bool TryParse(string s, out int result){
-            result =int.Parse(s);
-            if(result != null){
+            
+            try{
+                result = int.Parse(s);
                 return true;
             }
-            else{
+            catch{
+                result = 0;
                 return false;
-            }
+            }            
         }
     }
 }
